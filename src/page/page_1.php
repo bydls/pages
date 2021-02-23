@@ -104,25 +104,21 @@ class  page_1
 
 
         return "<div class='page-page'>" . $page_head . $page_prev . $page_for . $page_next . $page_end . '</div>';
-
-        //($page-1)*$pageshow;
-
     }
 
     public function get_url()
     {
-        $params = $_SERVER['QUERY_STRING']; //请求参数
+        [$uri, $params] = explode('?', $_SERVER["REQUEST_URI"]);
         if ($params) {
             $params_arr = explode('&', $params);
             foreach ($params_arr as $k => $param) {
                 if (stripos($param, 'page') > -1) unset($params_arr[$k]);
             }
-            count($params_arr) ? $currentUrl = $_SERVER['PHP_SELF'] . '?' . implode('&', $params_arr) . '&' : $currentUrl = $_SERVER['PHP_SELF'] . '?';
+            count($params_arr) ? ($currentUrl = $uri . '?' . implode('&', $params_arr) . '&') : ($currentUrl = $uri . '?');
         } else {
-            $currentUrl = $_SERVER['PHP_SELF'] . '?';
+            $currentUrl = $uri . '?';
         }
         return $currentUrl; //传回当前url
-
     }
 
 }
