@@ -12,8 +12,8 @@ class  page_1
 
     /**
      * @param int $totalPage 总页数
-     * @param int $pageshow 每页显示的记录条数
      * @param int $page 当前页/偏移
+     * @param int $pageshow 每页显示的记录条数
      * @param int $is_show_num
      * @param string $name
      * @param string $value
@@ -22,7 +22,7 @@ class  page_1
      * @author: hbh
      * @Time: 2021/2/23   11:59
      */
-    public function getPageHtml($totalPage, $pageshow, $page, $is_show_num = 10,$getName='',$name = '', $value = '')
+    public function getPageHtml($totalPage, $page, $pageshow, $is_show_num = 10, $getName = '', $name = '', $value = '')
     {//可选参数也可以写$getName='p'，可选参数可以给定默认值
         if ($page <= 0) {
             $page = 1;
