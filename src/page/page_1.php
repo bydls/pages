@@ -103,7 +103,7 @@ class  page_1
         }
 
 
-        return '<div class="page-page">' . $page_head . $page_prev . $page_for . $page_next . $page_end . '</div>';
+        return "<div class='page-page'>" . $page_head . $page_prev . $page_for . $page_next . $page_end . '</div>';
 
         //($page-1)*$pageshow;
 
