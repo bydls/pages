@@ -6,6 +6,7 @@
  */
 
 namespace bydls\pages;
+
 use bydls\pages\page\page_1;
 
 class  pages
@@ -22,6 +23,6 @@ class  pages
     public static function page1($totalPage, $pagenow, $pageshow = 10, $is_show_num = 10, $getName = '')
     {
         $pages = new page_1();
-        return $pages->getPageHtml($totalPage, $pagenow,$pageshow, $is_show_num, $getName);
+        return $pages->getPageHtml($totalPage, $pagenow, $pageshow, $is_show_num, $getName);
     }
 }
