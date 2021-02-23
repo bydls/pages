@@ -108,7 +108,9 @@ class  page_1
 
     public function get_url()
     {
-        [$uri, $params] = explode('?', $_SERVER["REQUEST_URI"]);
+        $temp = explode('?', $_SERVER["REQUEST_URI"]);
+        $uri = $temp[0];
+        $params = $temp[1] ?? '';
         if ($params) {
             $params_arr = explode('&', $params);
             foreach ($params_arr as $k => $param) {
